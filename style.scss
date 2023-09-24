@@ -1,0 +1,75 @@
+// Variables
+$primary: #ff7722;
+$black: #000000;
+
+// Import Normalize CSS
+@import "./node_modules/normalize.css/normalize.css";
+
+// Global Styles
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	line-height: 1.8;
+	color: $black;
+	font-weight: 600;
+	font-family: "Arya", sans-serif; // Secondary font
+}
+
+// Headings Styles
+h1,
+h2,
+h3,
+h4 {
+	color: $primary;
+	font-weight: 700;
+	margin-top: 0;
+	font-family: "Tillana", cursive;
+}
+
+h2 {
+	margin-bottom: 0.25em;
+	margin-top: 1em;
+}
+
+// Main Section Styles
+.main {
+	padding: 1rem;
+}
+
+.title {
+	font-size: 2.125em;
+}
+
+hr {
+	margin: 2em 0;
+}
+
+// Lists Styles
+ul {
+	font-size: 1em;
+	margin: 0;
+	font-size: 1.5em;
+	list-style: square;
+
+	// Special styling for class 'doha'
+	&.doha {
+		font-family: "Gotu", sans-serif;
+	}
+
+	li {
+		font-weight: 600;
+
+		// Spacing between list items
+		&:not(:last-child) {
+			margin-bottom: 1em;
+		}
+
+		// Styles for list item meanings
+		.meaning {
+			font-weight: 400;
+			font-size: 0.85em;
+			font-family: "Gotu", sans-serif;
+		}
+	}
+}

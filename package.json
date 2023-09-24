@@ -1,0 +1,24 @@
+{
+	"name": "hanuman-chalisa",
+	"version": "1.0.0",
+	"description": "This repository houses the Hanuman Chalisa in a user-friendly HTML format, allowing you to personalize fonts and styles before effortlessly converting it to PDF using your computer's print functionality.\"",
+	"scripts": {
+		"predev": "rm -rf .parcel-cache dist",
+		"dev": "parcel index.html --no-source-maps --no-cache"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vijayhardaha/hanuman-chalisa.git"
+	},
+	"author": "Vijay Hardaha",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vijayhardaha/hanuman-chalisa/issues"
+	},
+	"homepage": "https://github.com/vijayhardaha/hanuman-chalisa#readme",
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.9.3",
+		"normalize.css": "^8.0.1",
+		"parcel": "^2.9.3"
+	}
+}
