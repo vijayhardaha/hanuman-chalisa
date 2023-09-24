@@ -1,0 +1,114 @@
+// Variables
+$primary: #d24115;
+$black: #000000;
+
+// Import Bootstrap CSS
+@import "../node_modules/bootstrap/scss/mixins/banner";
+@include bsBanner("");
+
+// scss-docs-start import-stack
+// Configuration
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+// Layout & components
+:root {
+	// Note: Use `inspect` for lists so that quoted items keep the quotes.
+	// See https://github.com/sass/sass/issues/2383#issuecomment-336349172
+	--#{$prefix}font-sans-serif: #{inspect($font-family-sans-serif)};
+	--#{$prefix}font-monospace: #{inspect($font-family-monospace)};
+
+	// Root and body
+	@if $font-size-root != null {
+		--#{$prefix}root-font-size: #{$font-size-root};
+	}
+	--#{$prefix}body-font-family: #{inspect($font-family-base)};
+	@include rfs($font-size-base, --#{$prefix}body-font-size);
+	--#{$prefix}body-font-weight: #{$font-weight-base};
+	--#{$prefix}body-line-height: #{$line-height-base};
+	@if $body-text-align != null {
+		--#{$prefix}body-text-align: #{$body-text-align};
+	}
+
+	--#{$prefix}body-color: #{$body-color};
+	--#{$prefix}body-color-rgb: #{to-rgb($body-color)};
+	--#{$prefix}body-bg: #{$body-bg};
+	--#{$prefix}body-bg-rgb: #{to-rgb($body-bg)};
+
+	--#{$prefix}heading-color: #{$headings-color};
+
+	--#{$prefix}link-color: #{$link-color};
+	--#{$prefix}link-color-rgb: #{to-rgb($link-color)};
+	--#{$prefix}link-decoration: #{$link-decoration};
+
+	--#{$prefix}link-hover-color: #{$link-hover-color};
+	--#{$prefix}link-hover-color-rgb: #{to-rgb($link-hover-color)};
+
+	@if $link-hover-decoration != null {
+		--#{$prefix}link-hover-decoration: #{$link-hover-decoration};
+	}
+}
+
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+
+// Global Styles
+body {
+	line-height: 1.6;
+	color: $black;
+	font-weight: 600;
+	font-family: "Arya", sans-serif; // Secondary font
+}
+
+// Headings Styles
+h1,
+h2,
+h3,
+h4 {
+	color: $primary;
+	font-weight: 700;
+	font-family: "Tillana", cursive;
+}
+
+.subheading {
+	margin-bottom: 0.25em;
+	margin-top: 1em;
+}
+
+// Main Section Styles
+.main {
+	padding: 1rem;
+}
+
+hr {
+	margin: 2em 0;
+}
+
+// Lists Styles
+ul {
+	font-size: 1em;
+	margin: 0;
+	list-style: square;
+
+	// Special styling for class 'doha'
+	&.doha {
+		font-family: "Gotu", sans-serif;
+	}
+
+	li {
+		font-weight: 600;
+
+		// Spacing between list items
+		&:not(:last-child) {
+			margin-bottom: 1em;
+		}
+
+		// Styles for list item meanings
+		.meaning {
+			font-weight: 400;
+			font-size: 0.85em;
+			font-family: "Gotu", sans-serif;
+		}
+	}
+}

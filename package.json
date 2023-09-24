@@ -1,10 +1,13 @@
 {
 	"name": "hanuman-chalisa",
 	"version": "1.0.0",
-	"description": "This repository houses the Hanuman Chalisa in a user-friendly HTML format, allowing you to personalize fonts and styles before effortlessly converting it to PDF using your computer's print functionality.\"",
+	"description": "This repository houses the Hanuman Chalisa in a user-friendly HTML format, allowing you to personalize fonts and styles before effortlessly converting it to PDF using your computer's print functionality.",
 	"scripts": {
 		"predev": "rm -rf .parcel-cache dist",
-		"dev": "parcel index.html --no-source-maps --no-cache"
+		"dev": "parcel src/index.html --no-source-maps --no-cache",
+		"prebuild": "rm -rf .parcel-cache dist",
+		"build": "parcel build src/index.html",
+		"postbuild": "cp public/robots.txt dist/robots.txt"
 	},
 	"repository": {
 		"type": "git",
@@ -17,8 +20,16 @@
 	},
 	"homepage": "https://github.com/vijayhardaha/hanuman-chalisa#readme",
 	"devDependencies": {
+		"@fullhuman/postcss-purgecss": "^5.0.0",
+		"@parcel/packager-raw-url": "^2.9.3",
+		"@parcel/service-worker": "^2.9.3",
 		"@parcel/transformer-sass": "^2.9.3",
-		"normalize.css": "^8.0.1",
-		"parcel": "^2.9.3"
+		"@parcel/transformer-webmanifest": "^2.9.3",
+		"parcel": "^2.9.3",
+		"postcss": "^8.4.30"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.2",
+		"normalize.css": "^8.0.1"
 	}
 }

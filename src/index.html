@@ -5,7 +5,19 @@
 	<!-- Meta information -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hanuman Chalisa</title>
+
+	<!-- SEO Title and Description -->
+	<title>Hanuman Chalisa - Read, Recite, and Explore</title>
+	<meta name="description"
+		content="Experience the spiritual power of Hanuman Chalisa. Read and recite this sacred hymn and explore its meaning, significance, and benefits.">
+
+	<!-- Keywords (not visible to users) -->
+	<meta name="keywords"
+		content="Hanuman Chalisa, Lord Hanuman, Hanuman Chalisa app, Read Hanuman Chalisa, Recite Hanuman Chalisa, Hanuman Chalisa meaning, Hanuman Chalisa significance, Spiritual app, Devotional app, Hindu prayers, Hanuman Jayanti, Lord Hanuman devotions, Hindu spirituality, Sacred hymns, Chanting Hanuman Chalisa, Benefits of Hanuman Chalisa, Hanuman Chalisa verses, Hanuman Chalisa benefits, Prayer app, Religious app">
+
+	<!-- Other SEO Meta Tags -->
+	<meta name="author" content="Vijay Hardaha">
+	<meta name="robots" content="index, follow">
 
 	<!-- Preconnect to Google Fonts for improved performance -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,14 +31,25 @@
 	<!-- Include your custom stylesheet -->
 	<link rel="stylesheet" href="./style.scss" />
 
+	<!-- Include icons meta -->
+	<link rel="apple-touch-icon" sizes="60x60" href="../public/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../public/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../public/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../public/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../public/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../public/icons/favicon-16x16.png">
+	<link rel="icon" href="../public/icons/favicon.ico">
+	<link rel="manifest" href="../public/manifest.json">
+	<meta name="theme-color" content="#d24115">
+
 <body>
 	<!-- Main content starts here -->
 	<div class="main">
 		<!-- Heading for 'Title' section -->
-		<h1 class="title">🙏 🛕 श्री हनुमान चालीसा 🛕 🙏</h1>
+		<h1 class="title">🛕 श्री हनुमान चालीसा 🛕</h1>
 
 		<!-- Heading for 'Doha' section -->
-		<h2>दोहा :</h2>
+		<h4 class="subheading">दोहा :</h4>
 
 		<!-- Unordered list for 'Doha' section -->
 		<ul class="doha">
@@ -36,7 +59,7 @@
 		</ul>
 
 		<!-- Heading for 'Chaupai' section -->
-		<h2>चौपाई :</h2>
+		<h4 class="subheading">चौपाई :</h4>
 
 		<!-- Unordered list for 'Chaupai' section -->
 		<ul>
@@ -84,7 +107,7 @@
 		</ul>
 
 		<!-- Heading for 'Doha' section -->
-		<h2>दोहा :</h2>
+		<h4 class="subheading">दोहा :</h4>
 
 		<!-- Unordered list for 'Doha' section -->
 		<ul class="doha">
@@ -96,7 +119,7 @@
 		<hr>
 
 		<!-- Heading for the explanation of 'Shri Hanuman Chalisa' -->
-		<h2>श्री हनुमान चालीसा का अर्थ:</h2>
+		<h4 class="subheading">श्री हनुमान चालीसा का अर्थ:</h4>
 
 		<!-- Unordered list for the explanation of the verses -->
 		<ul>
@@ -364,6 +387,21 @@
 		</ul>
 	</div>
 	<!-- Main content ends here -->
+
+	<script type="module">
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register(
+				new URL('service-worker.js', import.meta.url),
+				{ type: 'module' }
+			)
+				.then((registration) => {
+					console.log('Service Worker registered with scope:', registration.scope);
+				})
+				.catch((error) => {
+					console.error('Service Worker registration failed:', error);
+				});
+		}
+	</script>
 </body>
 
 </html>
