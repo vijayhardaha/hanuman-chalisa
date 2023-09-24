@@ -1,10 +1,10 @@
-# Hanuman Chalisa PDF
+# Hanuman Chalisa (PWA)
 
-Welcome to the Hanuman Chalisa PDF repository! This project offers a convenient way to generate and customize PDFs of the Hanuman Chalisa using a simple HTML file and CSS styles. Whether you're a Hanuman Chalisa enthusiast or simply want to create personalized copies, this repository has you covered.
+Welcome to the Hanuman Chalisa Progressive Web App (PWA) repository! This project allows you to read the Hanuman Chalisa on your mobile device as a fully interactive and installable PWA. Experience the sacred text with the convenience of a mobile app.
 
 ## Getting Started
 
-To get started, follow these steps:
+To begin using the Hanuman Chalisa PWA, follow these simple steps:
 
 1. **Clone the Repository**: Clone this repository to your local machine.
 
@@ -12,41 +12,47 @@ To get started, follow these steps:
     git clone https://github.com/vijayhardaha/hanuman-chalisa.git
     ```
 
-2. **Open the Project Folder**: Navigate to the project folder.
+2. **Navigate to the Project Folder**: Change to the project directory.
 
     ```bash
     cd hanuman-chalisa
     ```
 
-3. **Install Dependencies**: Install project dependencies using npm.
+3. **Install Dependencies**: Install the required project dependencies using npm.
 
     ```bash
     npm install
     ```
 
-4. **Run the Development Server**: Run the development server using the provided npm script.
+4. **Start the Development Server**: Launch the development server by running the following command:
 
     ```bash
     npm run dev
     ```
 
-    This will compile your HTML and CSS and open the project in your browser.
+    This command will compile and serve the Hanuman Chalisa PWA, opening it in your default web browser for preview.
 
-5. **Customize Your Chalisa**: Edit the `index.html` and `style.scss` files to customize the Hanuman Chalisa text, font, and styles according to your preferences.
-
-6. **Generate PDF**: Once you've customized the Chalisa and are satisfied with the appearance, you can save it as a PDF using your browser's print functionality.
-
-7. **Distribution**: Distribute your personalized Hanuman Chalisa PDF as desired.
+    To create a production-ready build of your PWA, run `npm run build`. You can find the build artifacts in the `dist/` folder.
 
 ## Folder Structure
 
--   `index.html`: The main HTML file where you can customize the Hanuman Chalisa text and style.
--   `style.css`: The CSS file containing all the styling for the Hanuman Chalisa HTML.
--   `dist/`: This folder contains the compiled and bundled output from Parcel.
+The repository's folder structure is organized as follows:
+
+-   `public/`: This folder contains publicly accessible files.
+
+    -   `icons/`: Icons used by the PWA.
+    -   `manifest-icons/`: Icons used in the PWA manifest.
+    -   `manifest.json`: The PWA manifest file.
+    -   `robots.txt`: A file for specifying web crawler rules.
+
+-   `src/`: This folder contains the source code of the Hanuman Chalisa PWA.
+    -   `index.html`: The main HTML file for rendering the Hanuman Chalisa content.
+    -   `style.scss`: The SCSS (Sass) file for styling the PWA.
+    -   `service-worker.js`: The service worker script for enabling offline access and PWA functionality.
 
 ## Contributing
 
-Contributions are welcome! Whether it's improvements to the HTML layout, CSS styles, or additional features, feel free to open an issue or submit a pull request.
+We welcome contributions to improve the Hanuman Chalisa PWA. Whether it's enhancing the user interface, adding features, or addressing issues, please feel free to open an issue or submit a pull request.
 
 ## License
 
@@ -54,4 +60,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-> **May Lord Hanuman's blessings be with you!**
+> **May Lord Hanuman bless your spiritual journey!**
