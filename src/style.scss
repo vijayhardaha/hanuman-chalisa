@@ -2,14 +2,23 @@
 $primary: #d24115;
 $black: #000000;
 
+// Customize Bootstrap CSS
+$font-size-base: 1.25rem !default;
+$heading-size-base: 1.25rem !default;
+$line-height-base: 1.8 !default;
+
+$h1-font-size: $heading-size-base * 2.5 !default;
+$h2-font-size: $heading-size-base * 2 !default;
+$h3-font-size: $heading-size-base * 1.75 !default;
+$h4-font-size: $heading-size-base * 1.5 !default;
+$h5-font-size: $heading-size-base * 1.25 !default;
+$h6-font-size: $heading-size-base !default;
+
 // Import Bootstrap CSS
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 // Global Styles
 body {
-	line-height: 1.6;
-	color: $black;
-	font-weight: 600;
 	font-family: "Arya", sans-serif; // Secondary font
 }
 
@@ -31,6 +40,9 @@ h4 {
 // Main Section Styles
 .main {
 	padding: 1em 0;
+	max-width: 100%;
+	width: 786px;
+	margin: 0 auto;
 }
 
 hr {
@@ -43,13 +55,9 @@ ul {
 	margin: 0;
 	list-style: square;
 
-	// Special styling for class 'doha'
-	&.doha {
-		font-family: "Gotu", sans-serif;
-	}
-
 	li {
-		font-weight: 600;
+		font-weight: 700;
+		@include font-size($font-size-base * 1.25);
 
 		// Spacing between list items
 		&:not(:last-child) {
@@ -58,9 +66,9 @@ ul {
 
 		// Styles for list item meanings
 		.meaning {
-			font-weight: 400;
-			font-size: 0.85em;
+			color: $primary;
 			font-family: "Gotu", sans-serif;
+			@include font-size($font-size-base);
 		}
 	}
 }
