@@ -22,7 +22,12 @@ $h6-font-size: $heading-size-base !default;
 
 // Global Styles
 body {
-	font-family: "Arya", sans-serif; // Secondary font
+	font-family: "Eczar", serif;
+	background: url("../public/bg.jpg") repeat;
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	font-weight: 500;
 }
 
 // Headings Styles
@@ -32,12 +37,12 @@ h3,
 h4 {
 	color: $primary;
 	font-weight: 700;
-	font-family: "Tillana", cursive;
 }
 
 .subheading {
 	margin-bottom: 0.25em;
 	margin-top: 1em;
+	font-weight: 600;
 }
 
 // Main Section Styles
@@ -46,6 +51,7 @@ h4 {
 	max-width: 100%;
 	width: 786px;
 	margin: 0 auto;
+	text-align: center;
 }
 
 hr {
@@ -56,10 +62,9 @@ hr {
 ul {
 	font-size: 1em;
 	margin: 0;
-	list-style: square;
+	list-style: none;
 
 	li {
-		font-weight: 700;
 		@include font-size($font-size-base * 1.25);
 
 		// Spacing between list items
@@ -70,7 +75,7 @@ ul {
 		// Styles for list item meanings
 		.meaning {
 			color: $primary;
-			font-family: "Gotu", sans-serif;
+			font-weight: 400;
 			@include font-size($font-size-base);
 		}
 	}
