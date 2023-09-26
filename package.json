@@ -6,7 +6,7 @@
 		"predev": "rm -rf .parcel-cache dist",
 		"dev": "parcel src/index.html --no-source-maps --no-cache",
 		"prebuild": "rm -rf .parcel-cache dist",
-		"build": "parcel build src/index.html",
+		"build": "parcel build src/index.html --public-url=https://hanuman-chalisa.netlify.app",
 		"postbuild": "cp public/robots.txt dist/robots.txt"
 	},
 	"repository": {
