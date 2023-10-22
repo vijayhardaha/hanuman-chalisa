@@ -15,7 +15,7 @@ $h5-font-size: $heading-size-base * 1.25 !default;
 $h6-font-size: $heading-size-base !default;
 
 // Import Bootstrap CSS
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 // Import font faces
 @import "fonts";
