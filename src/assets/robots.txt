@@ -1,2 +1,6 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://hanuman-chalisa.netlify.app
