@@ -1,7 +1,9 @@
-# Hanuman Chalisa (PWA)
+# Hanuman Chalisa
 
-Welcome to the **Hanuman Chalisa Progressive Web App**!
-Read and recite the sacred Hanuman Chalisa with ease — anytime, anywhere. This app works offline and can be installed on your mobile or desktop like a regular app.
+This is a **simple and modern website** to read and recite the sacred Hanuman Chalisa anytime, anywhere.
+It features a clean UI and provides the **spiritual meaning of each doha and chaupai**.
+
+You can also install it on your **mobile or desktop** like a regular app — and it works **offline** too!
 
 ## 🚀 Getting Started
 
@@ -30,6 +32,7 @@ Read and recite the sacred Hanuman Chalisa with ease — anytime, anywhere. This
    ```
 
    This opens the app in your browser for development.
+
    For production build, use:
 
    ```bash
