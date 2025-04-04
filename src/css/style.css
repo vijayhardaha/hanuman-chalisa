@@ -57,15 +57,51 @@
     @apply text-base text-zinc-600 leading-relaxed;
   }
 
-  .meaning strong{
+  .meaning strong {
     @apply text-primary-600;
   }
 
+  .btn {
+    @apply inline-flex items-center justify-center transition-colors duration-200 border-1 cursor-pointer outline-none;
+  }
+
   .copy-btn {
-    @apply absolute flex items-center justify-center w-8 md:w-9 h-8 md:h-9 md:text-lg top-2 right-2 bg-primary-500 border-1 border-primary-600 text-white rounded-lg cursor-pointer box-border hover:bg-primary-600 transition-colors duration-200 text-base;
+    @apply absolute w-8 md:w-9 h-8 md:h-9 md:text-lg top-2 right-2 bg-primary-500 border-1 border-primary-600 text-white rounded-lg  hover:bg-primary-600 text-base;
   }
 
   .copy-btn.copied {
     @apply bg-green-600 border-green-700 text-white;
+  }
+
+  .btn-primary {
+    @apply text-white bg-primary-500 hover:bg-primary-600 border-primary-600;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-xs rounded-lg;
+  }
+
+  .modal {
+    @apply fixed inset-0 bg-zinc-900/85 flex items-center justify-center z-50 p-6;
+  }
+
+  .modal-content {
+    @apply bg-white rounded-2xl shadow-xl w-11/12 max-w-lg;
+  }
+
+  .modal-header {
+    @apply p-4 border-b-2 border-zinc-200 text-lg font-bold;
+  }
+
+  .modal-body {
+    @apply p-4;
+  }
+
+  .modal-footer {
+    @apply p-4 border-t-2 border-zinc-200 text-right;
+  }
+
+  .modal-close {
+    @apply py-2 px-8 text-sm;
   }
 }

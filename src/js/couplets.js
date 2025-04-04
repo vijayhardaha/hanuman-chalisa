@@ -53,9 +53,10 @@ class CoupletsRenderer {
 
   /**
    * Creates a card element for a section.
-   * @param {Object} section - The section data containing text and meaning.
+   * @param {Object} section - The section data containing text, meaning, and deepMeaning.
    * @param {string[]} section.text - The text of the couplet.
    * @param {string} [section.meaning] - The meaning of the couplet.
+   * @param {string} [section.deepMeaning] - The deep meaning of the couplet.
    * @returns {HTMLElement} - The card element.
    */
   createCard(section) {
@@ -73,6 +74,11 @@ class CoupletsRenderer {
       card.appendChild(meaning);
     }
 
+    if (section.deepMeaning) {
+      const deepMeaningButton = this.createDeepMeaningButton(section);
+      card.appendChild(deepMeaningButton);
+    }
+
     return card;
   }
 
@@ -85,10 +91,10 @@ class CoupletsRenderer {
    */
   createCopyButton(section) {
     const copyButton = createElement("button");
-    copyButton.className = "copy-btn";
+    copyButton.className = "btn copy-btn";
     copyButton.innerHTML = `<span class="icon">${copyIcon}</span>`;
     copyButton.addEventListener("click", () => {
-      navigator.clipboard.writeText([section.text.join("\n"), section.meaning].join("\n\n")).then(() => {
+      navigator.clipboard.writeText([section.text.join("\n"), `अर्थ: ${section.meaning}`].join("\n\n")).then(() => {
         copyButton.innerHTML = `<span class="icon">${checkIcon}</span>`;
         copyButton.classList.add("copied");
         setTimeout(() => {
@@ -122,6 +128,60 @@ class CoupletsRenderer {
     meaning.className = "meaning";
     meaning.innerHTML = `<strong>अर्थ:</strong> ${meaningText}`;
     return meaning;
+  }
+
+  /**
+   * Creates a "Read Deep Meaning" button for a section.
+   * @param {Object} section - The section data containing text and deepMeaning.
+   * @param {string[]} section.text - The text of the couplet.
+   * @param {string} [section.deepMeaning] - The deep meaning of the couplet.
+   * @returns {HTMLElement} - The "Read Deep Meaning" button element.
+   */
+  createDeepMeaningButton(section) {
+    const button = createElement("button");
+    button.className = "btn btn-primary btn-sm mt-2";
+    button.textContent = "आध्यात्मिक अर्थ पढ़ें";
+    button.addEventListener("click", () => {
+      this.showModal(section.text.join("<br>"), section.deepMeaning);
+    });
+    return button;
+  }
+
+  /**
+   * Displays a modal with the given title and content.
+   * @param {string} title - The title to display in the modal header.
+   * @param {string} content - The content to display in the modal body.
+   */
+  showModal(title, content) {
+    const modal = createElement("div");
+    modal.className = "modal";
+
+    const modalContent = createElement("div");
+    modalContent.className = "modal-content";
+
+    const modalHeader = createElement("div");
+    modalHeader.className = "modal-header";
+    modalHeader.innerHTML = `<h2>${title}</h2>`;
+    modalContent.appendChild(modalHeader);
+
+    const modalBody = createElement("div");
+    modalBody.className = "modal-body";
+    modalBody.innerHTML = `<p>${content}</p>`;
+    modalContent.appendChild(modalBody);
+
+    const modalFooter = createElement("div");
+    modalFooter.className = "modal-footer";
+    const closeButton = createElement("button");
+    closeButton.className = "font-sans btn btn-primary btn-sm modal-close";
+    closeButton.textContent = "Close";
+    closeButton.addEventListener("click", () => {
+      document.body.removeChild(modal);
+    });
+    modalFooter.appendChild(closeButton);
+    modalContent.appendChild(modalFooter);
+
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
   }
 }
 
