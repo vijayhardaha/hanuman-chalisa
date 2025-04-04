@@ -29,9 +29,11 @@ function renderCouplets() {
     copyButton.addEventListener("click", () => {
       navigator.clipboard.writeText([section.text.join("\n"), section.meaning].join("\n\n")).then(() => {
         copyButton.innerHTML = `<span class="icon">${checkIcon}</span>`;
+        copyButton.classList.add("copied");
         setTimeout(() => {
           copyButton.innerHTML = `<span class="icon">${copyIcon}</span>`;
-        }, 2000);
+          copyButton.classList.remove("copied");
+        }, 800);
       });
     });
     card.appendChild(copyButton);
