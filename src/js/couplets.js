@@ -92,13 +92,18 @@ class CoupletsRenderer {
   createCopyButton(section) {
     const copyButton = createElement("button");
     copyButton.className = "btn copy-btn";
-    copyButton.innerHTML = `<span class="icon">${copyIcon}</span>`;
+    copyButton.setAttribute("aria-label", "Copy couplet text and meaning");
+
+    const copyHTML = `<span class="icon">${copyIcon}</span><span class="sr-only">Copy couplet text and meaning</span>`;
+    const copiedHTML = `<span class="icon">${checkIcon}</span><span class="sr-only">Copied</span>`;
+
+    copyButton.innerHTML = copyHTML;
     copyButton.addEventListener("click", () => {
       navigator.clipboard.writeText([section.text.join("\n"), `अर्थ: ${section.meaning}`].join("\n\n")).then(() => {
-        copyButton.innerHTML = `<span class="icon">${checkIcon}</span>`;
+        copyButton.innerHTML = copiedHTML;
         copyButton.classList.add("copied");
         setTimeout(() => {
-          copyButton.innerHTML = `<span class="icon">${copyIcon}</span>`;
+          copyButton.innerHTML = copyHTML;
           copyButton.classList.remove("copied");
         }, 800);
       });
