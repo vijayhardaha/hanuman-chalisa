@@ -109,7 +109,7 @@ class CoupletsRenderer {
 
     copyButton.innerHTML = copyHTML;
     copyButton.addEventListener("click", () => {
-      navigator.clipboard.writeText([section.text.join("\n"), `अर्थ: ${section.meaning}`].join("\n\n")).then(() => {
+      navigator.clipboard.writeText([section.text.join("\n"), `अनुवाद: ${section.meaning}`].join("\n\n")).then(() => {
         copyButton.innerHTML = copiedHTML;
         copyButton.classList.add("copied");
         setTimeout(() => {
@@ -141,7 +141,7 @@ class CoupletsRenderer {
   createMeaning(meaningText) {
     const meaning = createElement("p");
     meaning.className = "meaning";
-    meaning.innerHTML = `<strong>अर्थ:</strong> ${formatText(meaningText)}`;
+    meaning.innerHTML = `<strong>अनुवाद:</strong> ${formatText(meaningText)}`;
     return meaning;
   }
 
