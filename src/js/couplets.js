@@ -166,7 +166,10 @@ class CoupletsRenderer {
 
     const modalBody = createElement("div");
     modalBody.className = "modal-body";
-    modalBody.innerHTML = `<p>${content}</p>`;
+    modalBody.innerHTML = content
+      .split("\n")
+      .map((paragraph) => `<p class="mb-4">${paragraph}</p>`)
+      .join("");
     modalContent.appendChild(modalBody);
 
     const modalFooter = createElement("div");
