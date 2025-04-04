@@ -20,7 +20,7 @@
 @layer components {
   /* Global Styles */
   body {
-    @apply font-serif font-medium relative bg-zinc-100 text-zinc-800;
+    @apply font-serif relative bg-zinc-100 text-zinc-800;
     @apply leading-relaxed;
     @apply m-0 p-0 box-border;
   }
