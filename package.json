@@ -1,7 +1,30 @@
 {
 	"name": "hanuman-chalisa",
 	"version": "1.0.0",
-	"description": "This repository houses the Hanuman Chalisa in a user-friendly HTML format, allowing you to personalize fonts and styles before effortlessly converting it to PDF using your computer's print functionality.",
+	"description": "A customizable Hanuman Chalisa in HTML format with options to personalize styles and convert to PDF.",
+	"author": "Vijay Hardaha",
+	"license": "MIT",
+	"homepage": "https://github.com/vijayhardaha/hanuman-chalisa#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vijayhardaha/hanuman-chalisa.git"
+	},
+	"bugs": {
+		"url": "https://github.com/vijayhardaha/hanuman-chalisa/issues"
+	},
+	"keywords": [
+		"Hanuman Chalisa",
+		"HTML",
+		"PDF",
+		"customizable",
+		"spiritual",
+		"devotional"
+	],
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not op_mini all"
+	],
 	"scripts": {
 		"predev": "rm -rf .parcel-cache dist",
 		"dev": "parcel src/index.html --no-source-maps --no-cache",
@@ -9,26 +32,19 @@
 		"build": "parcel build src/index.html --public-url=https://hanuman-chalisa.netlify.app",
 		"postbuild": "cp src/assets/robots.txt dist/robots.txt"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/vijayhardaha/hanuman-chalisa.git"
+	"dependencies": {
+		"@tailwindcss/postcss": "^4.1.2"
 	},
-	"author": "Vijay Hardaha",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/vijayhardaha/hanuman-chalisa/issues"
-	},
-	"homepage": "https://github.com/vijayhardaha/hanuman-chalisa#readme",
 	"devDependencies": {
 		"@fullhuman/postcss-purgecss": "^6.0.0",
 		"@parcel/packager-raw-url": "^2.12.0",
 		"@parcel/service-worker": "^2.12.0",
 		"@parcel/transformer-sass": "^2.12.0",
 		"@parcel/transformer-webmanifest": "^2.12.0",
+		"autoprefixer": "^10.4.21",
 		"parcel": "^2.12.0",
-		"postcss": "^8.4.45"
-	},
-	"dependencies": {
-		"bootstrap": "^5.3.3"
+		"postcss": "^8.4.45",
+		"prettier": "^3.5.3",
+		"tailwindcss": "^4.1.2"
 	}
 }
