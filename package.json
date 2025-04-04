@@ -32,9 +32,6 @@
 		"build": "parcel build src/index.html --public-url=https://hanuman-chalisa.netlify.app",
 		"postbuild": "cp src/assets/robots.txt dist/robots.txt"
 	},
-	"dependencies": {
-
-	},
 	"devDependencies": {
 		"@parcel/packager-raw-url": "^2.14.4",
 		"@parcel/transformer-webmanifest": "^2.14.4",
