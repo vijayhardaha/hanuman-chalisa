@@ -1,0 +1,6 @@
+.git
+dist
+lib/scripts
+node_modules
+out
+public/static
