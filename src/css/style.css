@@ -39,7 +39,7 @@
   }
 
   .card {
-    @apply bg-white rounded-xl p-4 mb-6 border-2 shadow border-primary-400;
+    @apply relative bg-white rounded-xl p-4 mb-6 border-2 shadow border-primary-600;
   }
 
   .couplet {
@@ -52,5 +52,9 @@
 
   .meaning {
     @apply text-base text-zinc-600 leading-relaxed;
+  }
+
+  .copy-btn {
+    @apply absolute flex items-center justify-center w-7 h-7 top-1.5 right-1.5 bg-primary-500 border-1 border-primary-600 text-white rounded-lg cursor-pointer box-border;
   }
 }
