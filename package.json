@@ -1,6 +1,6 @@
 {
 	"name": "hanuman-chalisa",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A customizable Hanuman Chalisa in HTML format with options to personalize styles and convert to PDF.",
 	"author": "Vijay Hardaha",
 	"license": "MIT",
