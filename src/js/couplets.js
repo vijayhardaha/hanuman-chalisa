@@ -120,7 +120,7 @@ class CoupletsRenderer {
   createMeaning(meaningText) {
     const meaning = createElement("p");
     meaning.className = "meaning";
-    meaning.innerHTML = `अर्थ: ${meaningText}`;
+    meaning.innerHTML = `<strong>अर्थ:</strong> ${meaningText}`;
     return meaning;
   }
 }
