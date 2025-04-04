@@ -36,8 +36,12 @@
     @apply text-4xl md:text-5xl mb-6;
   }
 
-  main > h4 {
+  main > h2 {
     @apply text-3xl font-bold mb-4;
+  }
+
+  .card + h2 {
+    @apply mt-16;
   }
 
   .card {
@@ -46,10 +50,6 @@
 
   .couplet {
     @apply mb-4 text-lg leading-relaxed font-bold;
-  }
-
-  .card + h4 {
-    @apply mt-16;
   }
 
   .meaning {
@@ -94,7 +94,7 @@
   .modal-dialog {
     @apply relative w-full max-w-lg mx-auto;
     @apply mt-6 mb-6 px-4 flex items-center;
-    min-height: calc(100%-3rem);
+    min-height: calc(100% - 3rem);
   }
 
   .modal-content {

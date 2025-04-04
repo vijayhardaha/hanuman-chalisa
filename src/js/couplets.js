@@ -13,6 +13,16 @@ const checkIcon =
 const createElement = (tag) => document.createElement(tag);
 
 /**
+ * Formats the text by wrapping certain parts in strong tags.
+ * This is used to highlight specific parts of the text.
+ *
+ * @param {string} text - The text to format.
+ * @returns {string} - The formatted text with strong tags.
+ */
+const formatText = (text) =>
+  text.replace(/(‘[^’]*’|“[^”]*”)/g, (match) => `<strong class="font-semibold">${match}</strong>`);
+
+/**
  * Class responsible for rendering couplets on the page.
  */
 class CoupletsRenderer {
@@ -46,7 +56,7 @@ class CoupletsRenderer {
    * @returns {HTMLElement} - The heading element.
    */
   createHeading(type) {
-    const heading = createElement("h4");
+    const heading = createElement("h2");
     heading.innerHTML = type === "chaupai" ? "।। चौपाई ।।" : "।। दोहा ।।";
     return heading;
   }
@@ -131,7 +141,7 @@ class CoupletsRenderer {
   createMeaning(meaningText) {
     const meaning = createElement("p");
     meaning.className = "meaning";
-    meaning.innerHTML = `<strong>अर्थ:</strong> ${meaningText}`;
+    meaning.innerHTML = `<strong>अर्थ:</strong> ${formatText(meaningText)}`;
     return meaning;
   }
 
@@ -185,7 +195,7 @@ class CoupletsRenderer {
       `<h4 class="modal-doha">${title}</h4>` +
       content
         .split("\n")
-        .map((paragraph) => `<p>${paragraph}</p>`)
+        .map((paragraph) => `<p>${formatText(paragraph)}</p>`)
         .join("");
     modalContent.appendChild(modalBody);
 
