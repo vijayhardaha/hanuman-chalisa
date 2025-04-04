@@ -26,11 +26,13 @@
 		"not op_mini all"
 	],
 	"scripts": {
-		"predev": "rm -rf .parcel-cache dist",
+		"clean": "rm -rf .parcel-cache dist",
+		"predev": "npm run clean",
 		"dev": "parcel src/index.html --no-source-maps --no-cache",
-		"prebuild": "rm -rf .parcel-cache dist",
+		"prebuild": "npm run clean && npm run fetchdata",
 		"build": "parcel build src/index.html --public-url=https://hanuman-chalisa.netlify.app",
-		"postbuild": "cp src/assets/robots.txt dist/robots.txt"
+		"postbuild": "cp src/assets/robots.txt dist/robots.txt",
+		"fetchdata": "node scripts/fetchData.js"
 	},
 	"devDependencies": {
 		"@parcel/packager-raw-url": "^2.14.4",
@@ -38,7 +40,10 @@
 		"@tailwindcss/postcss": "^4.1.2",
 		"parcel": "^2.14.4",
 		"postcss": "^8.5.3",
-		"prettier": "^3.5.3",
+		"prettier": "^3.5.3"
+	},
+	"dependencies": {
+		"csv-parser": "^3.2.0",
 		"tailwindcss": "^4.1.2"
 	}
 }
