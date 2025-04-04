@@ -37,7 +37,7 @@
     @apply text-4xl md:text-5xl mb-6;
   }
 
-  h4 {
+  main > h4 {
     @apply text-3xl font-bold mb-4;
   }
 
@@ -81,27 +81,45 @@
     @apply px-4 py-2 text-xs rounded-lg;
   }
 
+  body.modal--open {
+    overflow: hidden;
+  }
+
   .modal {
-    @apply fixed inset-0 bg-zinc-900/85 flex items-center justify-center z-50 p-6;
+    @apply fixed inset-0 bg-black/50 z-50 overflow-x-hidden outline-none overflow-y-auto;
+  }
+
+  .modal-dialog {
+    @apply relative w-full max-w-lg mx-auto mt-10 mb-10;
+    @apply flex items-center;
+    min-height: calc(100% -(.5rem* 2))
   }
 
   .modal-content {
-    @apply bg-white rounded-2xl shadow-xl w-11/12 max-w-lg;
+    @apply bg-white rounded-lg shadow-lg overflow-hidden;
   }
 
   .modal-header {
-    @apply p-4 border-b-2 border-zinc-200 text-lg font-bold;
+    @apply flex items-center justify-between p-4 border-b border-zinc-200;
+  }
+
+  .modal-title {
+    @apply text-2xl font-bold mb-0;
+  }
+
+  .modal-close {
+    @apply text-zinc-500 hover:text-zinc-700 bg-zinc-100 w-8 h-8 inline-flex items-center justify-center transition-colors duration-300 cursor-pointer text-xl hover:bg-zinc-200 rounded-full p-1;
   }
 
   .modal-body {
     @apply p-4;
   }
 
-  .modal-footer {
-    @apply p-4 border-t-2 border-zinc-200 text-right;
+  .modal-body p:not(:last-child) {
+    @apply mb-4;
   }
 
-  .modal-close {
-    @apply py-2 px-8 text-sm;
+  .modal-doha {
+    @apply text-lg font-bold mb-4 text-zinc-700;
   }
 }

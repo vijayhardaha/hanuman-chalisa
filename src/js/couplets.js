@@ -156,35 +156,38 @@ class CoupletsRenderer {
     const modal = createElement("div");
     modal.className = "modal";
 
+    const modalDialog = createElement("div");
+    modalDialog.className = "modal-dialog";
+
     const modalContent = createElement("div");
     modalContent.className = "modal-content";
 
     const modalHeader = createElement("div");
     modalHeader.className = "modal-header";
-    modalHeader.innerHTML = `<h2>${title}</h2>`;
+    modalHeader.innerHTML = `
+      <h3 class="modal-title">आध्यात्मिक अर्थ</h3>
+      <span class="modal-close">&times;</span>
+    `;
+    modalHeader.querySelector(".modal-close").addEventListener("click", () => {
+      document.body.removeChild(modal);
+      document.body.classList.remove("modal--open");
+    });
     modalContent.appendChild(modalHeader);
 
     const modalBody = createElement("div");
     modalBody.className = "modal-body";
-    modalBody.innerHTML = content
-      .split("\n")
-      .map((paragraph) => `<p class="mb-4">${paragraph}</p>`)
-      .join("");
+    modalBody.innerHTML =
+      `<h4 class="modal-doha">${title}</h4>` +
+      content
+        .split("\n")
+        .map((paragraph) => `<p>${paragraph}</p>`)
+        .join("");
     modalContent.appendChild(modalBody);
 
-    const modalFooter = createElement("div");
-    modalFooter.className = "modal-footer";
-    const closeButton = createElement("button");
-    closeButton.className = "font-sans btn btn-primary btn-sm modal-close";
-    closeButton.textContent = "Close";
-    closeButton.addEventListener("click", () => {
-      document.body.removeChild(modal);
-    });
-    modalFooter.appendChild(closeButton);
-    modalContent.appendChild(modalFooter);
-
-    modal.appendChild(modalContent);
+    modalDialog.appendChild(modalContent);
+    modal.appendChild(modalDialog);
     document.body.appendChild(modal);
+    document.body.classList.add("modal--open");
   }
 }
 
