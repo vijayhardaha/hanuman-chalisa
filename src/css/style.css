@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #fef5ee;
+  --color-primary-100: #fde9d7;
+  --color-primary-200: #facfae;
+  --color-primary-300: #f7ac7a;
+  --color-primary-400: #f28045;
+  --color-primary-500: #ee5f21;
+  --color-primary-600: #d24115;
+  --color-primary-700: #ba3314;
+  --color-primary-800: #942918;
+  --color-primary-900: #772417;
+  --color-primary-950: #40100a;
+}
+
+@layer components {
+  /* Global Styles */
+  body {
+    @apply font-serif font-medium relative bg-zinc-100 text-zinc-800;
+    @apply leading-relaxed;
+    font-family: "Eczar", serif;
+  }
+
+  /* Headings Styles */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold text-primary-600;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl mb-6;
+  }
+
+  h4 {
+    @apply text-3xl font-bold mb-4;
+  }
+
+  .card {
+    @apply bg-white rounded-xl p-4 mb-6 border-2 shadow border-primary-400;
+  }
+
+  .couplet {
+    @apply mb-4 text-lg leading-relaxed font-bold;
+  }
+
+  .card + h4 {
+    @apply mt-16;
+  }
+
+  .meaning {
+    @apply text-base text-zinc-600 leading-relaxed;
+  }
+}
