@@ -13,14 +13,13 @@
   --color-primary-900: #772417;
   --color-primary-950: #40100a;
 
-  --font-sans: "Jost", sans-serif;
-  --font-serif: "Eczar", serif;
+  --font-sans: "Jost", "Hind", sans-serif;
 }
 
 @layer components {
   /* Global Styles */
   body {
-    @apply font-serif relative bg-zinc-100 text-zinc-800;
+    @apply font-sans relative bg-zinc-100 text-zinc-800;
     @apply leading-relaxed;
     @apply m-0 p-0 box-border;
   }
@@ -42,7 +41,7 @@
   }
 
   .card {
-    @apply relative bg-white rounded-xl p-4 md:p-6 mb-6 border-2 shadow border-primary-600;
+    @apply relative bg-white rounded-xl p-4 mb-6 border-2 shadow border-primary-600;
   }
 
   .couplet {
@@ -66,7 +65,7 @@
   }
 
   .copy-btn {
-    @apply absolute w-8 md:w-9 h-8 md:h-9 md:text-lg top-2 right-2 bg-primary-500 border-1 border-primary-600 text-white rounded-lg  hover:bg-primary-600 text-base;
+    @apply absolute w-9 h-9 text-lg top-4 right-4 bg-primary-500 border-1 border-primary-600 text-white rounded-lg  hover:bg-primary-600;
   }
 
   .copy-btn.copied {
@@ -74,11 +73,13 @@
   }
 
   .btn-primary {
-    @apply text-white bg-primary-500 hover:bg-primary-600 border-primary-600;
+    @apply text-white bg-primary-500 hover:bg-primary-600;
+    @apply border-primary-600;
   }
 
   .btn-sm {
-    @apply px-4 py-2 text-xs rounded-lg;
+    @apply px-4 py-2;
+    @apply text-sm rounded-lg;
   }
 
   body.modal--open {
@@ -86,29 +87,36 @@
   }
 
   .modal {
-    @apply fixed inset-0 bg-black/50 z-50 overflow-x-hidden outline-none overflow-y-auto;
+    @apply fixed inset-0 bg-black/50 z-50;
+    @apply overflow-x-hidden outline-none overflow-y-auto;
   }
 
   .modal-dialog {
-    @apply relative w-full max-w-lg mx-auto mt-10 mb-10;
-    @apply flex items-center;
-    min-height: calc(100% -(.5rem* 2))
+    @apply relative w-full max-w-lg mx-auto;
+    @apply mt-6 mb-6 px-4 flex items-center;
+    min-height: calc(100%-3rem);
   }
 
   .modal-content {
-    @apply bg-white rounded-lg shadow-lg overflow-hidden;
+    @apply bg-white rounded-lg shadow-lg;
+    @apply overflow-hidden;
   }
 
   .modal-header {
-    @apply flex items-center justify-between p-4 border-b border-zinc-200;
+    @apply flex items-center justify-between;
+    @apply p-4 border-b border-zinc-200;
   }
 
   .modal-title {
     @apply text-2xl font-bold mb-0;
+    @apply leading-none block;
   }
 
   .modal-close {
-    @apply text-zinc-500 hover:text-zinc-700 bg-zinc-100 w-8 h-8 inline-flex items-center justify-center transition-colors duration-300 cursor-pointer text-xl hover:bg-zinc-200 rounded-full p-1;
+    @apply text-zinc-500 hover:text-zinc-700 bg-zinc-100 hover:bg-zinc-200;
+    @apply w-10 h-10 inline-flex items-center justify-center;
+    @apply transition-colors duration-300 cursor-pointer text-lg;
+    @apply rounded-lg p-0;
   }
 
   .modal-body {
