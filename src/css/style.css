@@ -57,6 +57,10 @@
     @apply text-base text-zinc-600 leading-relaxed;
   }
 
+  .meaning strong{
+    @apply text-primary-600;
+  }
+
   .copy-btn {
     @apply absolute flex items-center justify-center w-8 md:w-9 h-8 md:h-9 md:text-lg top-2 right-2 bg-primary-500 border-1 border-primary-600 text-white rounded-lg cursor-pointer box-border hover:bg-primary-600 transition-colors duration-200 text-base;
   }
