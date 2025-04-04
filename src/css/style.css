@@ -92,7 +92,7 @@
   }
 
   .modal-dialog {
-    @apply relative w-full max-w-lg mx-auto;
+    @apply relative w-full max-w-4xl mx-auto;
     @apply mt-6 mb-6 px-4 flex items-center;
     min-height: calc(100% - 3rem);
   }
@@ -104,7 +104,7 @@
 
   .modal-header {
     @apply flex items-center justify-between;
-    @apply p-4 border-b border-zinc-200;
+    @apply p-4 md:px-6 lg:px-8 border-b border-zinc-200;
   }
 
   .modal-title {
@@ -120,11 +120,11 @@
   }
 
   .modal-body {
-    @apply p-4;
+    @apply p-4 md:p-6 lg:p-8 text-base;
   }
 
   .modal-body p:not(:last-child) {
-    @apply mb-4;
+    @apply mb-4 md:mb-6 lg:mb-8;
   }
 
   .modal-doha {
