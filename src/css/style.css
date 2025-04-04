@@ -12,6 +12,9 @@
   --color-primary-800: #942918;
   --color-primary-900: #772417;
   --color-primary-950: #40100a;
+
+  --font-sans: "Jost", sans-serif;
+  --font-serif: "Eczar", serif;
 }
 
 @layer components {
@@ -19,7 +22,7 @@
   body {
     @apply font-serif font-medium relative bg-zinc-100 text-zinc-800;
     @apply leading-relaxed;
-    font-family: "Eczar", serif;
+    @apply m-0 p-0 box-border;
   }
 
   /* Headings Styles */
@@ -39,7 +42,7 @@
   }
 
   .card {
-    @apply relative bg-white rounded-xl p-4 mb-6 border-2 shadow border-primary-600;
+    @apply relative bg-white rounded-xl p-4 md:p-6 mb-6 border-2 shadow border-primary-600;
   }
 
   .couplet {
@@ -55,6 +58,6 @@
   }
 
   .copy-btn {
-    @apply absolute flex items-center justify-center w-7 h-7 top-1.5 right-1.5 bg-primary-500 border-1 border-primary-600 text-white rounded-lg cursor-pointer box-border;
+    @apply absolute flex items-center justify-center w-7 md:w-9 h-7 md:h-9 md:text-lg top-2 right-2 bg-primary-500 border-1 border-primary-600 text-white rounded-lg cursor-pointer box-border hover:bg-primary-600 transition-colors duration-300 text-base;
   }
 }
