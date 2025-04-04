@@ -1,6 +1,7 @@
 /**
  * Module dependencies
  */
+const fetch = require("node-fetch");
 const csv = require("csv-parser");
 const { Readable } = require("stream");
 const fs = require("fs");
